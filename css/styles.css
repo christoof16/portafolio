@@ -1,0 +1,602 @@
+/*custom properties*/
+:root{
+    --fuentePrincipal: "Roboto", sans-serif;
+    --azulFuerte: #0059aa;
+    --azulTenue: rgb(182, 241, 241);
+    --naranja: #f34;
+    --azulTransparente: #cff;
+    --negro: #eee;
+    --separacion: 5rem;
+}
+
+/*globales*/
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    line-height: 1.8;
+    background-color: var(--azulTenue);
+}
+
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3.4rem;
+}
+
+h3{
+    font-size: 2.8rem;
+}
+
+h1,h2,h3{
+    font-weight: 700;
+    /* font-family: var(--fuenteSecundaria); */
+    margin: calc(var(--separacion)/2) 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+[class$="__contenedor"]{
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/*HEADER*/
+
+.header{
+    background-color: var(--naranja);
+    position: fixed;
+    width: 100%;
+}
+
+.header__inicio{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {  
+    .header__inicio{
+        justify-content: space-around;
+        flex-direction: row;
+    }
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 2rem;
+    left: 15rem;
+    background-color: #d34;
+    width: 10rem;
+}
+
+@media (min-width: 768px) {  
+    .nav{
+        flex-direction: row;
+        position: unset;
+        background-color: #f34;
+        width: 60rem;
+    }
+}
+
+@media (min-width: 990px) {  
+    .nav{
+        width: 90rem;
+    }
+}
+
+.nav a{
+    max-width: 100%;
+    color: #eee;
+    text-transform: uppercase;
+    font-size: 1rem;
+    display: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    padding: 1rem 0;
+}
+
+.nav a:last-child{
+    border-bottom: none;
+}
+
+@media (min-width: 768px) {  
+    .nav a{
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-bottom: none;
+        width: 40rem;
+    }
+}
+
+@media (min-width: 990px) {  
+    .nav a{
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+    }
+}
+.nav a:hover{
+    background-color: #c14;
+    color: #eee;
+}
+
+.header__nombre{
+    display: flex;
+    font-weight: 900;
+    font-size: 2.3rem;
+    color: #cff;
+    text-transform: capitalize;
+}
+
+.header__icono{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+}
+
+@media (min-width: 768px) {  
+    .header__icono{
+        display: none;
+    }
+
+    .header__icono button{
+        color: #0059aa;
+    }
+
+}
+
+
+/*SECTION FOTO-PERFIL*/
+
+.contenedor{
+    background-image: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),url(../img/tecnologia.avif); 
+    background-size: cover;
+}
+
+.section{
+    width: 100%;
+}
+
+.section__imagen{
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.section__foto-perfil{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+}
+
+.section__titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.section__nombre,.section__profesion{
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #eee;
+    text-transform: uppercase;
+    height: 5rem;
+}
+
+@media (min-width: 768px) {  
+    .section__nombre,.section__profesion{
+        font-size: 2.6rem;
+    }
+}
+
+.section__redes-sociales{
+    text-align: center;
+}
+
+.section__redes-sociales .section__red-social{
+    display: inline-block;
+    font-size: 4.4rem;
+    color: #eee;
+    margin: 0 2rem;
+}
+
+.principal{
+    color: #eee;
+    width: 100%;
+    margin-top: 10rem;
+}
+
+.titulo{
+    width: 100%;
+}
+
+.titulo__data{
+    text-align: center;
+    font-size: 3.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.descripcion{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+}
+
+
+@media (min-width: 768px) {  
+    .datos{
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.datos-personales{
+    text-align: center;
+    margin: 0;
+}
+
+.datos-personales__cumple,
+.datos-personales__ciudad,
+.datos-personales__telefono,
+.datos-personales__email,
+.datos-personales__direccion{
+    margin: 0;
+    text-align: center;
+}
+
+.datos-personales__titulo{
+    text-align: center;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.datos-personales__info {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 990px) {  
+    .datos-personales__info{
+        width: 40rem;
+    }
+}
+
+.datos-personales__info p {
+    margin-right: 0rem;
+    padding: 1rem 2rem;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+@media (min-width: 990px) {  
+    .datos-personales__info p{
+        font-size: 1.3rem;
+    }
+}
+
+.datos-personales__info span{
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+@media (min-width: 990px) {  
+    .datos-personales__info span{
+        font-size: 1.6rem;
+    }
+}
+
+.datos-intereses{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 5rem;
+    text-align: center;
+}
+@media (min-width: 768px) {  
+    .datos-intereses{
+        width: 40rem;
+    }
+}
+
+.datos-intereses p{
+    width: 5rem;
+}
+
+
+.datos-intereses__titulo{
+    text-align: center;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.datos-intereses__juegos,
+.datos-intereses__musica,
+.datos-intereses__deporte,
+.datos-intereses__libros{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    padding: 1rem 10rem 1rem 1rem;
+    border: 1px solid #fff;
+}
+
+.datos-intereses__juegos:hover,
+.datos-intereses__musica:hover,
+.datos-intereses__deporte:hover,
+.datos-intereses__libros:hover{
+    background-color: #222;
+    cursor: pointer;
+}
+
+
+.cv{
+    max-width: 17rem;
+    margin: 0 auto;
+    display: flex;
+    column-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    margin-top: 2rem;
+}
+
+.cv:hover{
+    background-color: #222;
+    cursor: pointer;
+}
+
+.cv__descargar{
+    margin: 0;
+    padding: 1rem 0;
+}
+
+
+/*SKILLS*/
+
+.skills{
+    width: 100%;
+    padding-top: 5rem;
+}
+
+.skills__titulo{
+    font-size: 2.8rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.skills__contenedor{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    margin-left: 1rem;
+}
+
+@media (min-width: 768px) {  
+    .skills__contenedor{
+        grid-template-columns: repeat(4,1fr);
+        margin: 0 auto;
+    }
+}
+
+.skills__contenedor img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    padding: 1rem;
+}
+
+
+/*CURRICULUM*/
+
+.curriculum{
+    width: 95%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.curriculum__titulo{
+    text-align: center;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+}
+
+.curriculum__flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+
+@media (min-width: 990px) {  
+    .curriculum__flex{
+        flex-direction: row;
+    }
+}
+
+.curriculum__educacion,.curriculum__experiencia{
+    flex-basis: 40rem;
+}
+
+@media (min-width: 990px) {  
+    .curriculum__educacion,.curriculum__experiencia{
+        flex-basis: 50rem;
+    }
+}
+
+
+.educacion__info,.experiencia__info{
+    text-transform: uppercase;
+    font-size: 3.6rem;
+    text-align: center;
+}
+
+.educacion__titulo, .experiencia__titulo{
+    border: 1px solid #fff;
+    text-align: center;
+    padding: 2rem 0;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+}
+
+.educacion__descripcion, .experiencia__descripcion{
+    border: 1px solid #fff;
+    padding: 0 2rem;
+}
+
+/*PORTFOLIO*/
+
+
+.portfolio{
+    width: 100%;
+}
+
+.portfolio__titulo{
+    color: #fff;
+    text-align: center;
+    font-size: 3.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.portfolio__flex{
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio__descripcion{
+    color: #fff;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.portfolio__contenido{
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+}
+
+.portfolio__contenido img{
+    width: 20rem;
+}
+
+@media (min-width: 768px) {  
+    .portfolio__contenido img{
+        width: 25rem;
+    }
+}
+
+/*CONTACTO*/
+
+.contacto{
+    width: 100%;
+    margin-top: 10rem;
+}
+
+.contacto__titulo{
+    color: #fff;
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.contacto__flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+.contacto__flex label{
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.contacto__nombre input,
+.contacto__telefono input,
+.contacto__email input,
+.contacto__asunto input{
+    width: 20rem;
+    padding: 1rem 0;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {  
+    .contacto__nombre input,
+    .contacto__telefono input,
+    .contacto__email input,
+    .contacto__asunto input{
+        width: 50rem;
+}
+}
+
+.contacto__nombre label,
+.contacto__telefono label,
+.contacto__email label,
+.contacto__asunto label,
+.contacto__descripcion label{
+    display: inline-block;
+    width: 10rem;
+    margin-top: 2rem;
+}
+
+
+.contacto__descripcion textarea{
+    width: 20rem;
+    height: 10rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+@media (min-width: 768px) {  
+    .contacto__descripcion textarea{
+        width: 50rem;
+        height: 20rem;
+    }
+}
+
+.contacto__descripcion{
+    display: flex;
+}
+
+.contacto__descripcion label{
+    margin-right: 2rem;
+}
