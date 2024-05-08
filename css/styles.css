@@ -360,15 +360,6 @@ a{
     border: 1px solid #fff;
 }
 
-.datos-intereses__juegos:hover,
-.datos-intereses__musica:hover,
-.datos-intereses__deporte:hover,
-.datos-intereses__libros:hover{
-    background-color: #222;
-    cursor: pointer;
-}
-
-
 .cv{
     max-width: 17rem;
     margin: 0 auto;
