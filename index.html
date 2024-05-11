@@ -44,9 +44,9 @@
                 <p class="section__profesion">Desarrollador web</p>
             </div>
             <div class="section__redes-sociales">
-                <a class="section__red-social" href="https://github.com/christoof16"><i class="fa-brands fa-github"></i></a>
-                <a class="section__red-social" href="https://twitter.com/chris_vazquez12"><i class="fa-brands fa-square-twitter"></i></a>
-                <a class="section__red-social" href="https://www.linkedin.com/in/christian-vazquez-02274b305/"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="section__red-social section__red-social--github" href="https://github.com/christoof16"><i class="fa-brands fa-github"></i></a>
+                <a class="section__red-social section__red-social--twitter" href="https://twitter.com/chris_vazquez12"><i class="fa-brands fa-square-twitter"></i></a>
+                <a class="section__red-social section__red-social--linkedin" href="https://www.linkedin.com/in/christian-vazquez-02274b305/"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </section>
     
@@ -85,8 +85,8 @@
               
             </div>
 
-            <div class="cv">
-                <p class="cv__descargar">descargar CV</p>
+            <div class="cv" onclick="generarPDF()">
+                <p class="cv__descargar" >descargar CV</p>
                 <i class="fa-solid fa-file"></i>
             </div>
 
@@ -142,19 +142,15 @@
         <p class="portfolio__titulo">portfolio</p>
         <div class="portfolio__flex">
 
-            <div class="portfolio__contenido">
+            <a class="portfolio__contenido" href="https://carrito-de-compras-javascript-basico.netlify.app/">
                 <p class="portfolio__descripcion">carrito de compras hecho con JS</p>
-                <a href="https://carrito-de-compras-javascript-basico.netlify.app/">
-                    <img src="img/carritoCompras.png" alt="carritoCompras">
-                </a>
-            </div>
+                <img src="img/carritoCompras.png" alt="carritoCompras">
+            </a>
 
-            <div class="portfolio__contenido">
+            <a class="portfolio__contenido" href="https://abbi-ventas-cursos.netlify.app/">
                 <p class="portfolio__descripcion">simulador de venta de cursos</p>
-                <a href="https://abbi-ventas-cursos.netlify.app/">
-                    <img src="img/abbi.png" alt="carritoCompras">
-                </a>
-            </div>
+                <img src="img/abbi.png" alt="carritoCompras">
+            </a>
 
         </div>
     </section>
@@ -194,8 +190,31 @@
     </section>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+<script src="https://kit.fontawesome.com/c8773a5fc0.js" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
 
-    <script src="https://kit.fontawesome.com/c8773a5fc0.js" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+<script>
+    function generarPDF() {
+        // Crea una instancia de jsPDF
+        const pdf = new jsPDF();
+
+        // Agrega texto al PDF
+        let nombre = "Nombre: Christian Eduardo Vazquez Barba\n\n";
+        let puesto = "Puesto Solicitado: desarrollador web\n";
+        let email = "Email: christoof16@gmail.com\n";
+        let telefono = "Telefono: 3316070484\n\n";
+        let skills = "Skills: CSS,SASS,BOOTSTRAP\n JS,JQuery\n\n Backend:\n Mysql,PHP->Laravel\n Git\n Comandos Windows\n Linux(ubuntu,debian)\n\n";
+        let experiencia = 'Ayude al departamento del DIF a realizar una aplicación que registre\n la entrada y salida de alumnos y estudiantes que estén haciendo\n su servicio social basado básicamente la creación de un CRUD Y a\n su vez desarrolle una aplicación similar que guarda los datos del alumno\n como sus datos básicos, hora de llegada, hora de salida y cuando terminen\n su servicio social aparezca como finalizado\n';
+
+        pdf.text(`${nombre} ${puesto} ${email} ${telefono} HABILIDADES O TECNOLOGIAS:\n\n ${skills} EXPERIENCIA LABORAL:\n ${experiencia} `, 10, 10);
+
+        // Guarda el PDF
+        pdf.save("documento.pdf");
+    }
+</script>
+
+
+
 </body>
 </html>

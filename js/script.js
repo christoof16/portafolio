@@ -7,6 +7,8 @@ let navBarraContacto =  document.querySelector('.nav__barra:last-child');
 let headerBoton = document.querySelector('.header__boton');
 let headerBoton2 = document.querySelector('.header__boton2');
 
+
+
 headerBoton.addEventListener('click',aparecer);
 headerBoton2.addEventListener('click',desaparecer);
 
