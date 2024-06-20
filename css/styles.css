@@ -713,8 +713,42 @@ a{
     font-size: 2.2rem;
 }
 
-.contacto__boton:hover{
+/* .contacto__boton:hover{
     background-color: #aaa;
     color: #fff;
+    cursor: pointer;
+} */
+
+/* ESTILOS GENERADOS POR JS*/
+
+.alerta{
+    background-color: #d34;
+    padding: 2rem 0rem;
+    max-width: 50rem;
+    margin-left: 10rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.exito{
+    background-color: #4f8;
+    padding: 2rem 1rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-left: 10rem;
+}
+
+.opacity{
+    background-color: #5d9;
+    padding: 2rem 1rem;
+    color: #fff;
+}
+
+.opacity:hover{
+    background-color: #aaa;
     cursor: pointer;
 }
