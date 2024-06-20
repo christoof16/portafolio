@@ -92,7 +92,7 @@ function validacionFormulario(e){
     const name = e.target.name;
     if(e.target.value.trim().length < 1){
         mostrarAlerta(`${name} esta vacio`,e.target.parentElement);
-        enviarCorreo[e.target.nombre] ='';
+        enviarCorreo[e.target.name] ='';
         comprobarEmail();
         return;
     }
@@ -110,6 +110,7 @@ function validacionFormulario(e){
 
     comprobarEmail();
 
+    console.log(enviarCorreo);
 }
 
 function mostrarAlerta(mensaje,referencia){
@@ -136,7 +137,7 @@ function enviarDatos(e){
     exito.textContent = 'informacion enviada';
     exito.classList.add('exito');
     contactoFlex.appendChild(exito);
-    contactoBoton.style.display ="block";
+    // contactoBoton.style.display ="block";
 
     setInterval(()=>{
         contactoBoton.style.display ="none";
@@ -146,14 +147,15 @@ function enviarDatos(e){
     exito.remove();
     },3000);
 
-    contactoFlex.reset();
+    // contactoFlex.reset();
     
     // console.log('informacion enviada');
+
+    
 }
 
 function limpiarAlerta(ref){
     const alerta = ref.querySelector('.alerta');
-
 
     if(alerta){
         alerta.remove();
