@@ -157,35 +157,36 @@
 
     <section class="contacto" id="contacto">
         <p class="contacto__titulo">contacto</p>
-        <form class="contacto__flex">
+        <form class="contacto__flex" >
 
             <div class="contacto__nombre">
                 <label for="nombre">tu nombre:</label>
-                <input type="text" placeholder="tu nombre" id="nombre" >
+                <input class="contacto__name" type="text" placeholder="tu nombre" id="nombre" name="nombre" >
             </div>
 
             <div class="contacto__telefono">
                 <label for="telefono">tu telefono:</label>
-                <input type="tel" placeholder="num telefono" id="telefono">
+                <input class="contacto__phone" type="tel" placeholder="num telefono" id="telefono" name="telefono">
             </div>
             
             <div class="contacto__email">
                 <label for="correo">tu email: </label>
-                <input type="email" placeholder="tu email" id="correo">
+                <input class="contacto__correo" type="email" placeholder="tu email" id="correo" name="email">
             </div>
             
             <div class="contacto__asunto">
                 <label for="asunto">asunto:</label>
-                <input type="text" placeholder="asunto" id="asunto">
+                <input class="contacto__issue" type="text" placeholder="asunto" id="asunto" name="asunto">
             </div>
 
             <div class="contacto__descripcion">
                 <label for="descripcion">descripcion: </label>
-                <textarea name="descripcion" id="descripcion">
+                <textarea  class="contacto__description"  name="descripcion" id="descripcion">
                 </textarea>
             </div>
 
-            <button class="contacto__boton">enviar</button>
+            <button type="submit" class="contacto__boton" disabled>enviar</button>
+            <!-- <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html"> -->
         </form>
     </section>
 
